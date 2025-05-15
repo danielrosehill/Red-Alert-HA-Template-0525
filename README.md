@@ -34,6 +34,8 @@ The new (May 2025) preemptive update which sends a few minutes before the actual
 
 ### Alert Cadence
 
+![alt text](screenshots/flow.png)
+
 These timestamps are from a real alert in Jerusalem and are provided to help demonstrate and plan automations around these two conditions.
 
 Typically (so far): a preemptive alert is received a few minutes before the actual alert. 
