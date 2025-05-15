@@ -1,4 +1,4 @@
-# Red Alert Home Assistant Updated Templates (May 2025)
+# Home Assistant Automation Templates For Red Alerts
 
 ## Table of Contents
 - [Overview](#overview)
@@ -7,6 +7,10 @@
 - [Automation Templates](#automation-templates-here)
 - [Other Setup Details](#other-setup-details)
 - [Enhancements](#enhancements)
+
+## Disclaimer
+
+The Home Front Command (HFC) / Pikud HaOref is the sole official body responsible for civilian preparedness in Israel. These templates are shared merely to demonstrate implementing the HFC integration provided by the (non-governmental) [Oref Alert](https://github.com/amitfin/oref_alert) integration. Do not rely upon (this or any!) non-governmental alerting system as your primary or sole means of preparedness. 
 
 ## Overview
 
@@ -30,7 +34,9 @@ The new (May 2025) preemptive update which sends a few minutes before the actual
 
 These timestamps are from a real alert in Jerusalem and are provided to help demonstrate and plan automations around these two conditions.
 
-Typically (so far): a preemptive alert is received a few minutes before the actual alert. The preemptive alert state turns off precisely when (and occasionally if) the actual alert begins.
+Typically (so far): a preemptive alert is received a few minutes before the actual alert. 
+
+The preemptive alert state turns off/cancels precisely when (and occasionally if) the actual alert begins.
 
 #### Preemptive Warning Activation:
 
