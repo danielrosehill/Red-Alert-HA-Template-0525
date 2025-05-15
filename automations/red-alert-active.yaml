@@ -1,0 +1,47 @@
+alias: Red Alert - Activate Sirens and Flash Lights
+description: Trigger multiple sirens and briefly flash alert lights
+trigger:
+  - alias: Red alert triggered
+    platform: state
+    entity_id: binary_sensor.red_alert
+    to: "on"
+action:
+  - alias: Activate Sirens
+    service: homeassistant.turn_on
+    target:
+      entity_id:
+        - siren.room_one_siren
+        - siren.room_two_siren
+        - siren.office_siren
+        - siren.entryway_siren
+        - siren.lounge_siren
+        - siren.utility_siren
+
+  - service: light.turn_on
+    data:
+      entity_id: light.alert_indicator
+      rgb_color: [255, 0, 0]  # Red
+      brightness_pct: 100
+
+  - service: light.turn_on
+    data:
+      entity_id:
+        - light.room_one
+        - light.room_two
+
+  - service: notify.mobile_device_one
+    data:
+      message: "Red Alert Triggered!"
+      title: "Red Alert Warning"
+
+  - service: notify.mobile_device_two
+    data:
+      message: "Red Alert Triggered!"
+      title: "Red Alert Warning"
+
+  - service: notify.alert_service
+    data:
+      message: "Red Alert Triggered!"
+      title: "Red Alert Warning"
+
+mode: restart

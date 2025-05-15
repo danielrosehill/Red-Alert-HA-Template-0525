@@ -1,0 +1,38 @@
+alias: Red Alert Cleared
+description: ""
+trigger:
+  - platform: state
+    entity_id: binary_sensor.red_alert
+    to: "off"
+condition: []
+action:
+  - service: light.toggle
+    data:
+      entity_id: light.alert_indicator
+      rgb_color: [0, 255, 51]  # Green
+      brightness_pct: 100
+      transition: 5
+
+  - delay:
+      seconds: 15
+
+  - service: light.turn_off
+    data:
+      entity_id: light.alert_indicator
+
+  - service: notify.alert_service
+    data:
+      message: "The area is now safe."
+      title: "Alert Cleared"
+
+  - service: notify.mobile_device_one
+    data:
+      message: "The area is now safe."
+      title: "Alert Cleared"
+
+  - service: notify.mobile_device_two
+    data:
+      message: "The area is now safe."
+      title: "Alert Cleared"
+
+mode: single

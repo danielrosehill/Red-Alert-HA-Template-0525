@@ -1,0 +1,49 @@
+alias: Red Alert - Early Warning Notification
+description: Sends alert and flickers status lights for 2 minutes
+trigger:
+  - alias: Red alert triggered
+    platform: state
+    entity_id: binary_sensor.red_alert
+    to: "on"
+condition: []
+action:
+  - repeat:
+      count: 120  # 2 minutes total, alternating every 0.5s
+      sequence:
+        - service: light.turn_on
+          data:
+            entity_id: light.alert_indicator
+            rgb_color: [255, 174, 0]  # Orange
+            brightness_pct: 100
+        - delay:
+            milliseconds: 500
+        - service: light.turn_on
+          data:
+            entity_id: light.alert_indicator
+            rgb_color: [255, 255, 255]  # White
+            brightness_pct: 100
+        - delay:
+            milliseconds: 500
+
+  - service: light.turn_on
+    data:
+      entity_id:
+        - light.room_one
+        - light.room_two
+
+  - service: notify.mobile_device_one
+    data:
+      message: "Early warning: red alert triggered"
+      title: "Red Alert Warning"
+
+  - service: notify.mobile_device_two
+    data:
+      message: "Early warning: red alert triggered"
+      title: "Red Alert Warning"
+
+  - service: notify.alert_service
+    data:
+      message: "Early warning: red alert triggered"
+      title: "Red Alert Warning"
+
+mode: restart
