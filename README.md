@@ -30,21 +30,23 @@ The new (May 2025) preemptive update which sends a few minutes before the actual
 
 These timestamps are from a real alert in Jerusalem and are provided to help demonstrate and plan automations around these two conditions.
 
-Typically (so far): a preemptive alert is received a few minutes before the actual alert. 
-
-The preemptive alert state turns off precisely when (and occasionally if) the actual alert begins:
+Typically (so far): a preemptive alert is received a few minutes before the actual alert. The preemptive alert state turns off precisely when (and occasionally if) the actual alert begins.
 
 #### Preemptive Warning Activation:
 
-* **Start:** 15 May 2025 at 21:07:53
-* **End:** 15 May 2025 at 21:11:14
-* **Duration:** 3 minutes 21 seconds
+| Event | Timestamp | 
+|-------|----------|
+| **Start** | 15 May 2025 at 21:07:53 |
+| **End** | 15 May 2025 at 21:11:14 |
+| **Duration** | 3 minutes 21 seconds |
 
-#### Activate Warning Activation:
+#### Active Warning Activation:
 
-* **Start:** 15 May 2025 at 21:11:14
-* **End:** 15 May 2025 at 21:20:30
-* **Duration:** 9 minutes 15 seconds 
+| Event | Timestamp |
+|-------|----------|
+| **Start** | 15 May 2025 at 21:11:14 |
+| **End** | 15 May 2025 at 21:20:30 |
+| **Duration** | 9 minutes 15 seconds |
 
 
 ### Combined Downstream Sensor (optional)
