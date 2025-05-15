@@ -1,6 +1,6 @@
 # Home Assistant Automation Templates For Red Alerts (May 2025)
 
-Some updated automation tempaltes for Home Assistant integrating the new preemptive warning status as implemented by the [Oref Alert](https://github.com/amitfin/oref_alert) integration.
+Some updated automation templates for Home Assistant integrating the new preemptive warning status as implemented by the [Oref Alert](https://github.com/amitfin/oref_alert) integration.
 
 ## Table of Contents
 - [Overview](#overview)
